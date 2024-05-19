@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.head {
+    display: flex;
+    /* justify-content: space-between; */
+    width: 70%;
+    height: 60px;
+    border: 1px solid gray;
+}
+
+.search {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn-search {
+    border: none;
+    background-color: rgb(3, 170, 3);
+    padding: 6px;
+    height: 30px;
+    border-radius: 6px;
+    font-size: large;
+}
+
+.input-search {
+    height: 30px;
+    border-radius: 6px;
+    border: 0.2px solid black;
+    padding: 5px;
+    font-size: large;
+}
+
+.body {
+    width: 70%;
+    border: 1px solid gray;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.course {
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 320px;
+    border-radius: 10px;
+    background-color: rgb(213, 223, 231);
+    height: 60px;
+}
+
+.course>a {
+    text-decoration: none;
+}

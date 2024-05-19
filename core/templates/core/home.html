@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title> 
+    <link type="text/css" rel="stylesheet" href="{% static "css/style.css" %}">
+   
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <h2><a href="/my-courses">my courses</a></h2>
+            <form class="search" action="" method="POST">
+                {%csrf_token%}
+                <button class="btn-search" type="submit">search</button><input type="text" name="search" id=""
+                    placeholder="Search" class="input-search">
+            </form>
+            <h1><a href="/logout"><img width="40" height="42"
+                        src="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/logout-512.png" alt=""></a></h1>
+        </div>
+        <div class="body-container">
+            <div class="body">
+                {% for course in courses%}
+                <div class="course">
+                    <h3>{{course.name}}</h3>
+                    <a href="/course-details/{{course.code}}">learn more.</a>
+                </div>
+                {%endfor%}
+            </div>
+            <div class="notification">
+                <h2>notification:-</h2>
+                {% for note in notifications %}
+                <div class="note">
+                    <p>You have a <strong>{{note.course_name}}</strong> lecture at <strong>{{note.start_time}}</strong>
+                    </p>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

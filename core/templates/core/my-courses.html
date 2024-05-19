@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../../static/core/home.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .head {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 70%;
+            height: 60px;
+            border: 1px solid gray;
+        }
+
+        .head>h2>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .search {
+            width: 35%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .btn-search {
+            border: none;
+            background-color: rgb(3, 170, 3);
+            padding: 6px;
+            height: 30px;
+            border-radius: 6px;
+            font-size: large;
+        }
+
+        .input-search {
+            height: 30px;
+            border-radius: 6px;
+            border: 0.2px solid black;
+            padding: 5px;
+            font-size: large;
+        }
+
+        .body {
+            width: 70%;
+            border: 1px solid gray;
+            height: 70%;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            flex-wrap: wrap;
+            overflow-y: auto;
+        }
+
+        .course {
+            margin: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 320px;
+            border-radius: 10px;
+            background-color: rgb(213, 223, 231);
+            height: 60px;
+        }
+
+        .course>a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <h2><a href="/home">Home</a></h2>
+
+            <h1><a href="/logout"><img width="40" height="42"
+                        src="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/logout-512.png" alt=""></a>
+
+            </h1>
+
+        </div>
+        <div class="body">
+            {% for course in courses%}
+            <div class="course">
+                <h3>{{course.name}}</h3>
+                <a href="/course-details/{{course.code}}">learn more.</a>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+
+</html>

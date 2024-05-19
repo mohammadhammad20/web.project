@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            width: 35%;
+            height: 70%;
+            border: 1px solid gray;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(179, 176, 176);
+
+        }
+
+        input {
+            width: 60%;
+            border-radius: 5px;
+            border: 0.2px solid black;
+            padding: 6px;
+            font-size: large;
+        }
+
+        .btn-submit {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: large;
+            background-color: rgb(211, 229, 243);
+            transition: 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            border: 2px solid rgb(255, 255, 255);
+        }
+
+        p {
+            font-size: large;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1>Register</h1>
+            <input type="text" name="username" placeholder="Username" id="">
+            <input type="email" name="email" placeholder="Email" id="">
+            <input type="password" name="password" placeholder="password" id="">
+            <input type="password" name="password2" placeholder="Correct password" id="">
+            <button type="submit" class="btn-submit">Register</button>
+            <p>i have account <a href="/signin">Login</a></p>
+        </form>
+    </div>
+</body>
+
+</html>
